@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申請確認ポータル</title>
+
+<style>
+body{
+  font-family:sans-serif;
+  background:#f2f4f7;
+  margin:0;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+/* カード */
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 4px 6px rgba(0,0,0,0.1);
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* 色分け */
+.inspect{border-left:8px solid #28a745;}
+.scaffold{border-left:8px solid #2b7cff;}
+.crane{border-left:8px solid #ff8c00;}
+
+.title{
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.desc{
+  color:#666;
+  font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📋 申請確認ポータル</h1>
+
+<div class="grid">
+
+  <!-- 検査 -->
+
+  <div class="card inspect" onclick="goInspect()">
+    <div class="title">👷 社内検査</div>
+    <div class="desc">検査申請の一覧を確認</div>
+  </div>
+
+  <!-- 足場 -->
+
+  <div class="card scaffold" onclick="goScaffold()">
+    <div class="title">🛠️ 足場申請</div>
+    <div class="desc">足場の申請状況を確認</div>
+  </div>
+
+  <!-- クレーン -->
+
+  <div class="card crane" onclick="goCrane()">
+    <div class="title">🏗️ クレーン申請</div>
+    <div class="desc">クレーン使用予定を確認</div>
+  </div>
+
+</div>
+
+</div>
+
+<script>
+
+// ★ここにURLを入れる
+const INSPECT_URL = "https://honkoh-kakuninn.onrender.com";
+const SCAFFOLD_URL = "https://ashiba-kakuninn.onrender.com";
+const CRANE_URL = "https://crane-kakunin.onrender.com";
+
+function goInspect(){
+  window.open(INSPECT_URL, "_blank");
+}
+
+function goScaffold(){
+  window.open(SCAFFOLD_URL, "_blank");
+}
+
+function goCrane(){
+  window.open(CRANE_URL, "_blank");
+}
+
+</script>
+
+</body>
+</html>
